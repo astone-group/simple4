@@ -26,28 +26,18 @@ const Projects = () => {
     <section id="projects">
       <Container>
         <div className="project-wrapper">
-          <Title title="WHAT WE LOVE TO DO"/>
-          <Title title="{ our expertise and passion }"/>
-          <Fade
-                    left={isDesktop}
-                    bottom={isMobile}
-                    duration={800}
-                    delay={300}
-                    distance="50px"
-                  >
-            </Fade>
-        
+          <Title title="What we do" />
           {projects.map((project) => {
             const { title, info, info2, url, repo, img, id } = project;
 
             return (
               <Row key={id}>
-                <Col lg={6} sm={12}>
+                <Col lg={4} sm={12}>
                   <Fade
                     left={isDesktop}
                     bottom={isMobile}
-                    duration={800}
-                    delay={300}
+                    duration={1000}
+                    delay={500}
                     distance="30px"
                   >
                     <div className="project-wrapper__text">
@@ -55,7 +45,7 @@ const Projects = () => {
                       <div>
                         <p>
                           {info ||
-                            ' '}
+                            'PLorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi neque, ipsa animi maiores repellendu distinctioaperiam earum dolor voluptatum consequatur blanditiis inventore debitis fuga numquam voluptate architecto itaque molestiae.'}
                         </p>
                         <p className="mb-4">{info2 || ''}</p>
                       </div>
@@ -74,7 +64,7 @@ const Projects = () => {
                     </div>
                   </Fade>
                 </Col>
-                <Col lg={6} sm={12}>
+                <Col lg={8} sm={12}>
                   <Fade
                     right={isDesktop}
                     bottom={isMobile}
@@ -83,7 +73,12 @@ const Projects = () => {
                     distance="30px"
                   >
                     <div className="project-wrapper__image">
-                      
+                      <a
+                        href={url || '#!'}
+                        target="_blank"
+                        aria-label="Project Link"
+                        rel="noopener noreferrer"
+                      >
                         <Tilt
                           options={{
                             reverse: false,
@@ -100,9 +95,8 @@ const Projects = () => {
                           <div data-tilt className="thumbnail rounded">
                             <ProjectImg alt={title} filename={img} />
                           </div>
-                          
                         </Tilt>
-                      
+                      </a>
                     </div>
                   </Fade>
                 </Col>
